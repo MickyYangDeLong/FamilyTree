@@ -5,10 +5,10 @@ package Manger.Family;
  *
  */
 public class App2 {
-	public static String main() {
+	
+	public static void main(String[] args) {
 		String aString = "Hello World!";
 		System.out.println(aString);
-		return aString;
-
+		
 	}
 }
