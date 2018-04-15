@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 
-@RestController
+//@RestController
 @EnableAutoConfiguration
 @Api(value = "Test", description = "test the swagger API")
 @RequestMapping(value="/users")  
@@ -42,7 +42,7 @@ public class SampleController {
 		 // 加入一个属性，用来在模板中读取
         map.addAttribute("host", "http://blog.didispace.com");
         // return模板文件的名称，对应src/main/resources/templates/index.html
-        return "index";  
+        return "/index";  //@RestController不能跳转，直接返回json串，@Controller或者不注解{是不是默认为@Controller}可以跳转
 	}
 
 	static Map<String, User> users = Collections.synchronizedMap(new HashMap<>());
