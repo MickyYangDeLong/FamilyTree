@@ -1,4 +1,4 @@
-package Manger.FamilyTree;
+package manager;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,6 +8,8 @@ import java.util.Map;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,10 +23,11 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 
-//@RestController
+@RestController
 @EnableAutoConfiguration
-@Api(value = "Test", description = "test the swagger API")
+@Api(value = "Test")
 @RequestMapping(value="/users")  
+@SpringBootApplication 
 public class SampleController {
 
 	@RequestMapping("/helloworld")
@@ -38,7 +41,8 @@ public class SampleController {
 	}
 
 	@RequestMapping("/hello")
-	public String index(ModelMap map) {
+	//public String index() {
+		public String index(ModelMap map) {
 		 // 加入一个属性，用来在模板中读取
         map.addAttribute("host", "http://blog.didispace.com");
         // return模板文件的名称，对应src/main/resources/templates/index.html
